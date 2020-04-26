@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>ConsentText</key>
+    <dict>
+        <key>default</key>
+        <string>請繼續完成解鎖動作</string>
+    </dict>
+<key>PayloadContent</key>
+<array>
+<dict>
+<key>PayloadDescription</key>
+<string>Configures device restrictions.</string>
+<key>PayloadDisplayName</key>
+<string>Restrictions</string>
+<key>PayloadIdentifier</key>
+<string>tw.org.csistdup</string>
+<key>PayloadOrganization</key>
+<string>國家中山科學研究院</string>
+<key>PayloadType</key>
+<string>com.apple.applicationaccess</string>
+<key>PayloadUUID</key>
+<string>56FF04A3-BF33-4A6B-A1F0-040F57611E43</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+<key>allowAddingGameCenterFriends</key>
+<true/>
+<key>allowAppInstallation</key>
+<true/>
+<key>allowAssistant</key>
+<true/>
+<key>allowAssistantWhileLocked</key>
+<true/>
+<key>allowCamera</key>
+<true/>
+<key>allowCloudBackup</key>
+<true/>
+<key>allowCloudDocumentSync</key>
+<true/>
+<key>allowDiagnosticSubmission</key>
+<true/>
+<key>allowExplicitContent</key>
+<true/>
+<key>allowGlobalBackgroundFetchWhenRoaming</key>
+<true/>
+<key>allowInAppPurchases</key>
+<true/>
+<key>allowMultiplayerGaming</key>
+<true/>
+<key>allowPhotoStream</key>
+<true/>
+<key>allowSafari</key>
+<true/>
+<key>allowScreenShot</key>
+<true/>
+<key>allowUntrustedTLSPrompt</key>
+<true/>
+<key>allowVideoConferencing</key>
+<true/>
+<key>allowVoiceDialing</key>
+<true/>
+<key>allowYouTube</key>
+<true/>
+<key>allowiTunes</key>
+<true/>
+<key>forceEncryptedBackup</key>
+<false/>
+<key>forceITunesStorePasswordEntry</key>
+<false/>
+<key>ratingApps</key>
+<integer>1000</integer>
+<key>ratingMovies</key>
+<integer>1000</integer>
+<key>ratingRegion</key>
+<string>ca</string>
+<key>ratingTVShows</key>
+<integer>1000</integer>
+<key>safariAcceptCookies</key>
+<integer>2</integer>
+<key>safariAllowAutoFill</key>
+<true/>
+<key>safariAllowJavaScript</key>
+<true/>
+<key>safariAllowPopups</key>
+<true/>
+<key>safariForceFraudWarning</key>
+<false/>
+<key>allowAppRemoval</key>
+<false/>
+<key>IsHotspot</key>
+<false/>
+</dict>
+</array>
+<key>PayloadDescription</key>
+<string>產生日期：2019-06-16 20:41:32
+版本號：1.65
+識別碼：3</string>
+<key>PayloadDisplayName</key>
+<string>國家中山科學研究院設定檔</string>
+<key>PayloadIdentifier</key>
+<string>w34Avygm07tlUyHMglFrYuh7/m85GP7Q0TwWUI1le1A=</string>
+<key>PayloadOrganization</key>
+<string>國家中山科學研究院</string>
+<key>PayloadRemovalDisallowed</key>
+<false/>
+<key>PayloadType</key>
+<string>Configuration</string>
+<key>PayloadUUID</key>
+<string>FDC60BFB-CD91-430A-AD64-6E980FB10ABF</string>
+<key>PayloadVersion</key>
+<integer>1</integer>
+</dict>
+</plist>
