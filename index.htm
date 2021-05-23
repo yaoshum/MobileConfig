@@ -56,7 +56,7 @@
         
         if(typeof code != 'undefined' && code != '' && String(code).length>0 && code != null){
           $('.withcode').show();
-          //$('.nocode').hide();
+          $('.nocode').hide();
           console.log(place)
           if(typeof place == 'undefined' || place == '' || place == null) $('span.place').hide();
           $('span.place-name').text(place);
@@ -68,7 +68,7 @@
           $('a').removeClass('disabled').attr('href', url);
         }else{
           $('input#result').val('https://captucaptu.github.io/realsms/?code=');
-          //$('.withcode').hide();
+          $('.withcode').hide();
           $('.nocode').show();
           $('input#scode').on('change input', function(){
             $('input#result').val('https://captucaptu.github.io/realsms/?code='+$(this).val().replace(/\s/g,'') + '&place='+ $('#place').val().replace(/\s/g,''));
