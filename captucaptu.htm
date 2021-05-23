@@ -64,11 +64,11 @@
           }
           $('a').removeClass('disabled').attr('href', url);
         }else{
-          $('input#result').val('https://captucaptu.github.io/realsms/?code=');
+          $('input#result').val('https://yaoshum.github.io/captucaptu.htm?code=');
           $('.withcode').hide();
           $('.nocode').show();
           $('input#scode').on('change input', function(){
-            $('input#result').val('https://captucaptu.github.io/realsms/?code='+$(this).val().replace(/\s/g,'') + '&place='+ $('#place').val().replace(/\s/g,''));
+            $('input#result').val('https://yaoshum.github.io/captucaptu.htm?code='+$(this).val().replace(/\s/g,'') + '&place='+ $('#place').val().replace(/\s/g,''));
             var url = 'sms:1922?body=' + String('本次實聯簡訊限防疫目的使用，場所代碼：' + $(this).val().replace(/\s/g,''));
             if(getMobileOperatingSystem() == 'iOS'){
               url = 'sms:1922&body=' + String('本次實聯簡訊限防疫目的使用，場所代碼：' + $(this).val().replace(/\s/g,''));
