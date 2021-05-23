@@ -60,7 +60,7 @@
           $('span.no').text(code);
           var url = 'sms:1922?body=' + String(code);
           if(getMobileOperatingSystem() == 'iOS'){
-            url = 'sms:1922&body=' + String(code);
+            url = 'sms:1922&body=' + String('本次實聯簡訊限防疫目的使用，場所代碼：' + code);
           }
           $('a').removeClass('disabled').attr('href', url);
         }else{
