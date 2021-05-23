@@ -1,9 +1,93 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>東衢鎖頭🔧工具</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head><body>
-
-<meta http-equiv="refresh" content="0;URL= https://r4.neocities.org/">
-
-</body></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://captucaptu.github.io/realsms/css/style.css">
+    <script src="https://captucaptu.github.io/realsms/js/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap withcode">
+      <h2>疾管家實聯制工具</h2>
+      <p class="code-description">
+        <span class="place">場所名稱：<span class="place-name text-danger text-bold"></span><br></span>
+        場所代碼：<span class="no text-danger text-bold"></span><br>若場所代碼錯誤，打開後請自行修正內容</p>
+        <div class="btn-wrapper text-center">
+          <a class="btn btn-primary btn-lg disabled" href="sms:1922">點我打開簡訊</a>
+        </div>
+    </div>
+    <div class="wrap nocode" style="display: nonde;">
+      <h2>疾管家實聯制工具</h2>
+      <p>方法一：<br>
+      QR Code 掃描器<a href="https://liff.line.me/1655719655-jmaeX5gA/vsafe/scanner?liffId=1655719655-jmaeX5gA">「「按我開啟」」</a><br>
+      <a href="https://liff.line.me/1655719655-jmaeX5gA/vsafe/scanner?liffId=1655719655-jmaeX5gA"><img src="https://s3-ap-northeast-1.amazonaws.com/g0v-hackmd-images/uploads/upload_de6d0bbc8f0785713b97a4ec402837c5.png" width="180" height="200"></a>
+      <p>方法二：<br>
+      請手動輸入場所代碼（15碼）<br>
+        <input id="scode" type="text">
+      </p>
+      <p>請輸入場所名稱（可不填）<br>
+        <input id="place" type="text">
+      </p>
+      <p>輸入場所代碼後，可將下列網址用其他方式發送給需登記的訪客<br>
+        <input id="result" type="text" disabled>
+      </p>
+    </div>
+        <div class="btn-wrapper text-center">
+          <div class="btn-wrapper text-center">
+          <a class="btn btn-primary btn-lg disabled" href="sms:1922">點我打開簡訊</a>
+        </div>
+    <script>
+      function getMobileOperatingSystem() { 
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera; 
+      
+        if ( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) ) { return 'iOS'; } 
+              
+        else if ( userAgent.match( /Android/i ) ) { return 'Android'; } 
+      
+        else { return 'unknown'; } 
+      } 
+      $(document).ready(function(){
+        var code = getParameterByName('code');
+        var place = getParameterByName('place');
+      
+        
+        if(typeof code != 'undefined' && code != '' && String(code).length>0 && code != null){
+          $('.withcode').show();
+          //$('.nocode').hide();
+          console.log(place)
+          if(typeof place == 'undefined' || place == '' || place == null) $('span.place').hide();
+          $('span.place-name').text(place);
+          $('span.no').text(code);
+          var url = 'sms:1922?body=' + String(code);
+          if(getMobileOperatingSystem() == 'iOS'){
+            url = 'sms:1922&body=' + String(code);
+          }
+          $('a').removeClass('disabled').attr('href', url);
+        }else{
+          $('input#result').val('https://captucaptu.github.io/realsms/?code=');
+          //$('.withcode').hide();
+          $('.nocode').show();
+          $('input#scode').on('change input', function(){
+            $('input#result').val('https://captucaptu.github.io/realsms/?code='+$(this).val().replace(/\s/g,'') + '&place='+ $('#place').val().replace(/\s/g,''));
+            var url = 'sms:1922?body=' + String('本次實聯簡訊限防疫目的使用，場所代碼：' + $(this).val().replace(/\s/g,''));
+            if(getMobileOperatingSystem() == 'iOS'){
+              url = 'sms:1922&body=' + String('本次實聯簡訊限防疫目的使用，場所代碼：' + $(this).val().replace(/\s/g,''));
+            }
+            $('a').removeClass('disabled').attr('href', url);
+          });
+        }
+      });
+      function getParameterByName(name, url = window.location.href) {
+          name = name.replace(/[\[\]]/g, '\\$&');
+          var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+    </script>
+  </body>
+</html>
